@@ -130,9 +130,31 @@ html
 
 .navbar
 {
+    display: flex;
     grid-area: navbar;
     color: white;
 }
+
+.fa.fa-arrow-circle-up
+{
+    /* margin:0; */
+    position: fixed;
+    /* margin-top: 400px; */
+    bottom: 80px;
+    cursor: pointer;   
+    z-index: 99; 
+    /* text-decoration: none; */
+    color: white;
+}
+
+.fa.fa-arrow-circle-up:hover
+{
+    box-shadow: white;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+
 
 .sidebar
 {
