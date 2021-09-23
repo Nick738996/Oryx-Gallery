@@ -1,0 +1,343 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans Regular';
+    box-sizing: border-box;
+}
+
+body 
+{   
+    min-height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(./museo2.jpeg); 
+    background-size: cover;
+    background-position:center;  
+    background-attachment: fixed;
+}
+
+html
+{
+    height: 100%;
+}
+
+ .grid-container > *
+{
+    box-shadow: -1px 1px 7px 0px black;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center; 
+}  
+
+.header
+{
+    grid-area: header;
+    background-color: black;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.logo-link
+{
+    width: 8%;
+}
+
+.logo
+{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.fa.fa-bars
+{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.hamburger
+{
+    display: block;
+}
+
+.hambuger:focus
+{
+    outline:none;
+}
+
+.header-menu
+{
+    display: none;
+    flex-direction: column   ;
+}
+
+.header-menu.show
+{
+    display: flex;
+}
+
+.header-list
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:auto;
+    position: relative;
+    top: 0;
+    z-index: 99;
+    transition: 0.4s;
+    overflow: hidden;
+    width: 100%;
+    
+    
+}
+
+.header-list ul li
+{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+}
+
+.header-list ul li a
+{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+/* .header-list ul li::after
+{
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    
+}
+
+.header-list ul li:hover::after 
+{
+    width: 100%;
+} */
+
+
+.navbar
+{
+    grid-area: navbar;
+    color: white;
+}
+
+.sidebar
+{
+    grid-area: sidebar;
+    color: white;
+    
+}
+
+.main
+{
+    grid-area: main;
+    color: white;
+    
+}
+
+.content
+{
+    width: 100%;
+    transform: translateY(-50);
+    text-align: center;
+    height: 1000px; 
+    color: rgb(223, 223, 223);
+    flex-wrap: wrap;
+    
+}
+
+.content h1
+{
+    text-decoration: underline 4px;
+    text-underline-position: under;
+    font-size: 100px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.footer
+{
+    grid-area: footer; 
+    color: white;
+    background-color: black;  
+    display: flex;
+    height: 100px;
+    
+}
+.made-by
+{   
+    margin-top: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 8px;
+}
+
+.social-media
+{
+   
+    display: flex;
+    height: 20px;
+    margin-left: auto;
+    padding: 0;
+ 
+    
+} 
+
+.facebook
+{
+    width: 40px;
+    height: 40px;
+    margin: 15px; 
+    
+}
+
+.instagram
+{
+    width: 40px;
+    height: 40px;
+    margin: 15px; 
+}
+
+.whatsapp
+{
+    width: 40px;
+    height: 40px;
+    margin: 15px; 
+}
+
+.grid-container
+{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header" 100px
+    "navbar" 50px
+    "main" auto
+    "sidebar" 100px
+    "footer" 50px;
+} 
+
+@media(min-width:600px)
+{
+    .hamburger
+    {
+        display: block;
+    }
+
+    .header-menu
+    {
+        display: none;
+    }
+
+    .logo
+    {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+    }
+
+    .grid-container
+    {
+        grid-template: 
+        "header header" 100px
+        "navbar navbar" 50px
+        "sidebar main" auto 
+        "footer footer" 50px / 
+        200px auto
+        ;
+    }
+}
+
+@media (min-width:900px)
+{
+    .hamburger
+    {
+        display: none;
+    }
+
+    .header-menu
+    {
+        display: block;
+        
+    }
+
+    .logo
+    {
+        width: 160px;
+        height: 160px;
+        cursor: pointer;
+    }
+
+    .grid-container
+    {
+        grid-template: 
+        "header header header" 170px
+        "navbar main sidebar" auto 
+        "footer footer footer" 50px /
+         200px  auto  200px;
+    }
+
+    .header-list ul li::after
+{
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    
+}
+
+.header-list ul li:hover::after 
+{
+    width: 100%;
+}
+
+}
+
+/* @media (max-width: 600px)
+{
+    .header-menu
+    {
+        display: none;
+    }
+
+    .hamburger
+    {
+        display: block;
+    }
+
+}
+
+
+@media (max-width: 900px)
+{
+    .header-menu
+    {
+        display: none;
+    }
+
+    .hamburger
+    {
+        display: block;
+    }
+} */
+
+
+
+
